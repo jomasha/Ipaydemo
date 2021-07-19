@@ -1,0 +1,11 @@
+.idea 
+.idea/workspace.xml
+node_modules/**
+.env
+public/docs
+public/docs/**
+uploads
+uploads/**
+.vscode/
+.history
+.history/**

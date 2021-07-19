@@ -1,0 +1,17 @@
+{
+    "application": {
+    "name": "IPAY",
+    "version": "0.0.1",
+    "company_address": "",
+    "no_reply_email": ""
+
+  },
+  "database" : {
+    "driver" : "MySql",
+    "database" : "ipay",
+    "host" : "localhost",
+    "port" : 3306,
+    "username" : "root",
+    "password" : ""
+  }
+}

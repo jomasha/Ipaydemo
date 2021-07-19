@@ -1,0 +1,80 @@
+doctype html
+block head
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, height=device-height, initial-scale=1')
+        meta(name="description" content="Ipay B2c")
+        meta(name="author" content="josephacharia91@gmail.com")
+        title Ipay-B2C Demo
+        link(rel='icon' type='image/png' href='icons8-puzzle-24.png')
+        link(rel='stylesheet' type='text/css' href='vendor/bootstrap/css/bootstrap.min.css')
+        link(rel='stylesheet' type='text/css' href='fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+        link(rel='stylesheet' type='text/css' href='fonts/Linearicons-Free-v1.0.0/icon-font.min.css')
+        link(rel='stylesheet' type='text/css' href='vendor/animate/animate.css')
+        link(rel='stylesheet' type='text/css' href='vendor/css-hamburgers/hamburgers.min.css')
+        link(rel='stylesheet' type='text/css' href='vendor/animsition/css/animsition.min.css')
+        link(rel='stylesheet' type='text/css' href='vendor/select2/select2.min.css')
+        link(rel='stylesheet' type='text/css' href='vendor/daterangepicker/daterangepicker.css')
+        link(rel='stylesheet' type='text/css' href='css/util.css')
+        link(rel='stylesheet' type='text/css' href='css/main.css')
+    body
+        .limiter
+            - var resp=response;
+            - console.log("err",err);
+            .container-login100
+                .wrap-login100
+                    .login100-form-title(style='background-image: url(images/bg-01.jpg);')
+                        a.login100-form-title-1(href="/")
+                            | B2C Demo
+                    if(!resp)
+                        form.login100-form.validate-form(action='/sendRequest', method='post')
+
+                            .wrap-input100.validate-input.m-b-26(data-validate='Vendor ID is required')
+                                span.label-input100 vendor ID
+                                input.input100(type='text' name='vid' placeholder='Enter Vendor Id' value="demo")
+                                span.focus-input100
+                            .wrap-input100.validate-input.m-b-18(data-validate='Reference is required' readonly)
+                                span.label-input100 reference
+                                input.input100#ref(type='text' readonly name='reference' placeholder='reference')
+                                span.focus-input100
+                            .wrap-input100.validate-input.m-b-18(data-validate='Phone is required')
+                                span.label-input100 Phone
+                                input.input100(type='text' name='phone' placeholder='Phone' value="254720000000")
+                                span.focus-input100
+                            .wrap-input100.validate-input.m-b-26(data-validate='Amount is required')
+                                span.label-input100 Amount
+                                input.input100(type='text' name='amount' placeholder='amount in Ksh.' value="1")
+                                span.focus-input100
+                            .wrap-input100.validate-input.m-b-26(data-validate='Amount is required')
+                                span.label-input100 Security Key
+                                input.input100(type='password' name='security_key' placeholder='Security Key' value="demo")
+                                span.focus-input100
+                            .container-login100-form-btn
+                                button.login100-form-btn#submit
+                                    | Submit
+                    else if(resp=="err")
+                        .alert.alert-danger(role='alert')
+                            | #{err}
+                            p
+                                |click B2C Demo to try again. 
+                    else
+                        .alert.alert-success(role='alert')
+                            | #{resp}                        
+        script(src="vendor/jquery/jquery-3.2.1.min.js")
+        script(src="vendor/animsition/js/animsition.min.js")
+        script(src="vendor/bootstrap/js/popper.js")
+        script(src="vendor/bootstrap/js/bootstrap.min.js")
+        script(src="vendor/select2/select2.min.js")
+        script(src="vendor/daterangepicker/moment.min.js")
+        script(src="vendor/daterangepicker/daterangepicker.js")
+        script(src="vendor/countdowntime/countdowntime.js")
+        script(src="js/main.js")
+        script(src="js/utils.js")
+        script.
+            $(document).ready(function(){
+            let message="key1="+"test"+"&key2="+"test";
+            let hashkey = "demo"    
+            
+            $("#ref").val(randomString());
+            })
+
