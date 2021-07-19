@@ -72,13 +72,17 @@ Transactions.prototype = {
         });
 
     },
-    getById: function (getResponse) {
-        var values = [this.transactionId];
+    /**
+     * 
+     *Get object by transaction id 
+     */
+    getByTransaction: function (getResponse) {
+        var values = [this.transaction_ref];
         utilities.dbo.getConnection(function (err, connection) {
             if (err) {
                 getResponse("Connection : " + err);
             } else {
-                connection.query("SELECT * FROM `pricing_rates` WHERE `id` = ?", values, function (err, result) {
+                connection.query("SELECT * FROM `transactions` WHERE `transaction_ref` = ?", values, function (err, result) {
                     if (err) {
                         getResponse("Fetch data : " + err);
                     } else {

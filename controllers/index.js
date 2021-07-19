@@ -82,4 +82,16 @@ router.get('/mpesaCallBack', function (req, res, next) {
   }
 
 })
+router.get('/searchTransaction', function (req, res, next) {
+  transactions.transaction_ref = req.query.transactionId;
+  if (req.query.transactionId) {
+    transactions.getByTransaction(function (result) {
+      res.status("200").json(result);
+    });
+  } else {
+    res.status('418').send("Not Found");
+  }
+
+
+});
 module.exports = router;

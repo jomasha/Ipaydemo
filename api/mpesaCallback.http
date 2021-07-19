@@ -1,2 +1,0 @@
-### Create Interest Rates
-GET http://localhost:9999/mpesaCallBack?mmref=864b68f&hash=580b98050d38a4c53625617f3bde613f329ad1df5358457aefe36dd65a3674fc&status=SUCCESS&ipay_reference=864b68fc8e2432a7a7cdf6b8576f79665b6e7b6bc0efea5640d0eb04999d0fc6&merchant_reference=lM6Lq9c07ZCMSXdY
